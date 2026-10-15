@@ -1,0 +1,6 @@
+tools/raw/
+tools/shots/
+node_modules/
+.DS_Store
+__pycache__/
+.factory/
