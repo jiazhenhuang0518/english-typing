@@ -11,6 +11,7 @@ import json
 import subprocess
 import sys
 import tempfile
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -28,7 +29,12 @@ def gh(path, method="GET", body=None, ok404=False):
         json.dump(body, tmp)
         tmp.close()
         cmd += ["--input", tmp.name]
-    r = subprocess.run(cmd, capture_output=True, text=True)
+    for attempt in range(4):
+        r = subprocess.run(cmd, capture_output=True, text=True)
+        transient = r.returncode != 0 and any(x in r.stderr for x in ("EOF", "timeout", "connection reset", "502", "503"))
+        if not transient:
+            break
+        time.sleep(2 * (attempt + 1))
     if tmp:
         Path(tmp.name).unlink()
     if r.returncode != 0:
