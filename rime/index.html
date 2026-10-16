@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0c">
+  <title>打字学英语 · 输入法版安装</title>
+  <link rel="icon" href="../icons/icon-192.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page { padding-bottom: 40px; }
+    .demo { font-size: 17px; line-height: 2; padding: 10px 12px; border: 1px solid #2a2a2e; border-radius: 10px; background: #111114; }
+    .demo i { font-style: normal; color: #8a8a92; font-size: 13px; }
+    .demo b { margin-right: 14px; font-weight: 500; }
+    .cmd { display: block; font-size: 12px; word-break: break-all; padding: 10px; border-radius: 8px; background: #111114; border: 1px solid #2a2a2e; user-select: all; }
+    ol.steps { padding-left: 20px; } ol.steps li { margin: 6px 0; line-height: 1.6; }
+    details.plat { border: 1px solid #2a2a2e; border-radius: 12px; padding: 10px 14px; margin: 12px 0; }
+    details.plat > summary { font-size: 17px; font-weight: 600; cursor: pointer; }
+    .row.wrap { flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><a href="../" style="color:inherit;text-decoration:none"><span class="logo">Aa</span> 打字学英语</a></div>
+  </header>
+  <main><section class="page">
+    <h1>输入法版：平时打字顺便学英语</h1>
+    <p>把手机、电脑的输入法换成 <b>Rime + 雾凇拼音</b>，聊天、写文档时候选词后面直接显示英文：</p>
+    <div class="demo"><b>1. 苹果<i>〔apple〕</i></b><b>2. 🍎</b><b>3. 评过</b><b>4. 平果</b></div>
+    <div class="demo" style="margin-top:8px"><b>1. 学习<i>〔learn; study〕</i></b><b>2. 学系</b><b>3. 学<i>〔learn; study〕</i></b></div>
+    <p class="muted small">反过来打英文单词也行：打 <code>apple</code> 会出现 apple<i class="muted">〔苹果〕</i>。</p>
+
+    <details class="card" style="padding:12px 14px">
+      <summary><b>Rime、雾凇拼音是什么？</b>（点开）</summary>
+      <p class="small"><b>Rime</b>（中州韵）是一个开源的输入法“发动机”，各平台都有：Mac 叫鼠须管，Windows 叫小狼毫，安卓叫同文，iPhone 叫仓输入法。可以把它想成一台能自己改装的车。</p>
+      <p class="small"><b>雾凇拼音</b>是装在 Rime 上的一套现成的拼音词库和设置，打字手感接近搜狗、微信输入法。</p>
+      <p class="small">这个页面给的东西 = 雾凇拼音 + 我们加的「英文注释」，英文来自开源词典 CC-CEDICT。</p>
+    </details>
+
+    <details class="plat" open>
+      <summary>📱 iPhone / iPad（仓输入法）</summary>
+      <ol class="steps">
+        <li>App Store 装 <a href="https://apps.apple.com/cn/app/id6446617683" target="_blank" rel="noopener">仓输入法</a>（免费，自带雾凇拼音）。</li>
+        <li>系统「设置 → 通用 → 键盘 → 键盘 → 添加新键盘」选「仓输入法」，再点它打开「允许完全访问」（英文注释用到的小脚本需要它）。</li>
+        <li>用 Safari 点下面按钮下载补丁包，下载完点地址栏左边的 ⬇️ → 点文件 → 左下角「分享」⬆️ → 选「仓输入法」。</li>
+        <li>打开仓输入法 App → 首页「RIME」→「重新部署」，等它转完（第一次几十秒）。</li>
+        <li>聊天时长按键盘左下角 🌐 切到仓输入法，打 <code>pingguo</code> 看看。</li>
+      </ol>
+      <a class="btnlike primary" href="https://github.com/jiazhenhuang0518/english-typing/releases/latest/download/english-hint-overlay.zip">下载 iPhone 补丁包（1.4 MB）</a>
+      <p class="muted small">补丁只有 4 个文件，不会覆盖仓输入法自带的雾凇拼音和你的其他设置。</p>
+    </details>
+
+    <details class="plat">
+      <summary>🤖 安卓（同文输入法）</summary>
+      <ol class="steps">
+        <li>下载安装 <a href="https://github.com/osfans/trime/releases/download/v3.3.12/com.osfans.trime-v3.3.12-0-ge09ac711-arm64-v8a-release.apk">同文输入法 APK</a>（近几年的手机都选这个；装不上再试 <a href="https://github.com/osfans/trime/releases/tag/v3.3.12" target="_blank" rel="noopener">其他版本</a>）。</li>
+        <li>打开同文，按提示授予「文件访问」权限，并在系统里启用它。</li>
+        <li>下载下面的完整包，用手机自带「文件管理」解压，把<b>解压出来的所有文件</b>放进手机存储根目录的 <code>rime</code> 文件夹（没有就新建；里面原有的同名文件选覆盖）。</li>
+        <li>同文 App →「部署」，等它跑完（第一次要 1～3 分钟）。</li>
+        <li>切到同文键盘打 <code>pingguo</code> 试试；如果不是雾凇拼音，在同文 App 的「方案」里选「雾凇拼音」。</li>
+      </ol>
+      <a class="btnlike primary" href="https://github.com/jiazhenhuang0518/english-typing/releases/latest/download/rime-ice-english-full.zip">下载完整包（17 MB）</a>
+    </details>
+
+    <details class="plat">
+      <summary>💻 Mac（鼠须管）</summary>
+      <ol class="steps">
+        <li>打开「终端」（启动台搜 “终端”），粘贴下面这行，回车：</li>
+      </ol>
+      <code class="cmd" id="cmdMac">curl -fsSL https://jiazhenhuang0518.github.io/english-typing/rime/install-mac.sh | bash</code>
+      <div class="row gap"><button type="button" class="ghost sm" data-copy="cmdMac">复制命令</button></div>
+      <ol class="steps" start="2">
+        <li>中途要输入开机密码（输的时候屏幕上不显示，正常），这是在装鼠须管。</li>
+        <li>「系统设置 → 键盘 → 文字输入 → 编辑… → 左下角 +」→ 简体中文 → 鼠须管 → 添加。找不到就注销重新登录一次。</li>
+      </ol>
+      <p class="muted small">脚本会把原来的 <code>~/Library/Rime</code> 改名备份，不会删。</p>
+    </details>
+
+    <details class="plat">
+      <summary>🪟 Windows（小狼毫）</summary>
+      <ol class="steps">
+        <li>右键「开始」按钮 →「终端」或「Windows PowerShell」。</li>
+        <li>粘贴下面这行（很长，用复制按钮），回车：</li>
+      </ol>
+      <code class="cmd" id="cmdWin">[Net.ServicePointManager]::SecurityProtocol='Tls12'; iex ([Text.Encoding]::UTF8.GetString((New-Object Net.WebClient).DownloadData('https://jiazhenhuang0518.github.io/english-typing/rime/install-windows.ps1')))</code>
+      <div class="row gap"><button type="button" class="ghost sm" data-copy="cmdWin">复制命令</button></div>
+      <ol class="steps" start="3">
+        <li>弹出小狼毫安装窗口就一路「下一步」，装完脚本会自动放配置、部署。</li>
+        <li>按 <code>Win + 空格</code> 切到小狼毫，打 <code>pingguo</code> 试试。</li>
+      </ol>
+    </details>
+
+    <div class="card">
+      <h3>开关英文注释</h3>
+      <div class="kv"><span>Mac / Windows</span><span>打字时按 <code>Ctrl + `</code>（数字 1 左边的键）或 <code>F4</code>，选「英文 / 无英」</span></div>
+      <div class="kv"><span>手机</span><span>默认一直开着；仓输入法、同文的键盘菜单里一般有「方案选单 / 开关」可以切</span></div>
+      <p class="muted small">每次重新打开输入法默认是开着的。</p>
+    </div>
+
+    <details class="honest"><summary>老实说</summary><ul>
+      <li>输入法里只有<b>单词</b>的英文，不会翻译整句。整句翻译、跟打、复习还是用 <a href="../">网页 App</a>。</li>
+      <li>输入法打过的词<b>不会自动进词本</b>，和网页 App 的进度不互通。看到想学的词，去网页 App 查一下就会进词本。</li>
+      <li>英文是从词典里按规则自动挑的前一两个意思，大部分准，少数会怪（比如很书面、或一个字有很多意思时）。一句话的整体候选（比如“我在学习”）通常没有注释，只有词典里有的词才有。</li>
+      <li>iPhone 上输入密码时系统会强制换回苹果键盘，这是 iOS 的规定，所有第三方输入法都一样。</li>
+      <li>Windows 脚本我没有在 Windows 电脑上实际跑过（这边只有 Mac）；出问题时可以手动做：装 <a href="https://rime.im/download/" target="_blank" rel="noopener">小狼毫</a> → 把完整包解压到 <code>%APPDATA%\Rime</code> → 右键托盘里的「中」→「重新部署」。</li>
+      <li>仓输入法自带的雾凇拼音版本由仓自己决定；如果打字没出英文，可以在仓输入法的「文件管理」里把上面安卓用的完整包整个导入（会替换掉仓自带的那套）。</li>
+    </ul></details>
+
+    <p class="credits muted small">雾凇拼音 <a href="https://github.com/iDvel/rime-ice" target="_blank" rel="noopener">iDvel/rime-ice</a>（GPL-3.0）· 输入法引擎 <a href="https://rime.im" target="_blank" rel="noopener">Rime</a> · 英文释义 <a href="https://cc-cedict.org" target="_blank" rel="noopener">CC-CEDICT</a>（CC BY-SA 4.0）</p>
+  </section></main>
+  <script>
+    document.addEventListener("click", (e) => {
+      const id = e.target.dataset && e.target.dataset.copy;
+      if (!id) return;
+      const text = document.getElementById(id).textContent;
+      const done = () => { e.target.textContent = "已复制 ✓"; setTimeout(() => (e.target.textContent = "复制命令"), 1500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, () => alert(text));
+      else { prompt("复制这行：", text); }
+    });
+  </script>
+</body>
+</html>
