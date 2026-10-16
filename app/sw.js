@@ -1,5 +1,5 @@
 // 离线缓存：软件本身和词典存在手机里，没网也能打开
-const VERSION = "et-5e5901490c";
+const VERSION = "et-643d90721e";
 const SHELL = [
   "./",
   "index.html",
@@ -49,6 +49,8 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET" || url.origin !== self.location.origin) return;
+  // 输入法安装包几十 MB，别塞进离线缓存，交给浏览器正常下载
+  if (url.pathname.endsWith(".zip")) return;
   const isData = url.pathname.includes("/data/");
   e.respondWith(
     caches.match(e.request, { ignoreSearch: true }).then((hit) => {

@@ -190,7 +190,8 @@ def build_pages():
 <h3>第 3 步：把补丁包给仓输入法（两种方法选一种）</h3>
 <div class="card"><b>方法 A：扫码下载（简单）</b>
 <ol>
-<li>用相机扫下面的二维码，用 Safari 打开安装页 → 展开「iPhone」→ 点「下载 iPhone 补丁包」。</li>
+<li>用相机扫下面的二维码，用 <b>Safari</b> 打开安装页 → 展开「iPhone」→ 点「下载 iPhone 补丁包」→ 弹窗点「下载」。</li>
+<li class="muted">别从桌面上「打字学英语」图标里进安装页去点，那里面 iPhone 不让下载文件；也别在微信里打开。点了没反应就用方法 B。</li>
 <li>下载完点地址栏左边的 ⬇️（或「文件」App →「下载」）→ 点开 <code>{OVERLAY}</code> 所在位置 → 长按这个文件 →「共享」→ 选「仓输入法」。</li>
 </ol>
 {guide_qr}</div>

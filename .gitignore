@@ -6,3 +6,4 @@ __pycache__/
 .factory/
 dist/
 使用说明/安装包/
+app/rime/*.zip

@@ -4,7 +4,7 @@
 #       bash install-mac.sh 本地.zip    （用本地配置包）
 set -euo pipefail
 
-ZIP_URL="https://github.com/jiazhenhuang0518/english-typing/releases/latest/download/rime-ice-english-full.zip"
+ZIP_URL="https://jiazhenhuang0518.github.io/english-typing/rime/rime-ice-english-full.zip"
 RIME_DIR="$HOME/Library/Rime"
 SQUIRREL="/Library/Input Methods/Squirrel.app"
 

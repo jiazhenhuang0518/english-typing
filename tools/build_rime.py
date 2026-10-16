@@ -1,6 +1,6 @@
 """Build the Rime (雾凇拼音) English-hint add-on.
 
-Outputs (in dist/rime/, not published to Pages; uploaded as GitHub Release assets):
+Outputs (in dist/rime/, copied to app/rime/ for Pages; also uploaded as GitHub Release assets):
   english-hint-overlay.zip   only our files, for 仓输入法 (iOS, already bundles rime-ice)
   rime-ice-english-full.zip  rime-ice + our files, for 鼠须管 / 小狼毫 / 同文
 
@@ -119,7 +119,11 @@ def zip_dir(src_dirs, out):
                 if rel.startswith((".git", "others/", "build/")) or rel in seen:
                     continue
                 seen.add(rel)
-                z.write(p, rel)
+                # fixed timestamp: same content -> same bytes, so republishing doesn't re-upload 17 MB
+                info = zipfile.ZipInfo(rel, date_time=(2026, 1, 1, 0, 0, 0))
+                info.external_attr = 0o644 << 16
+                info.compress_type = zipfile.ZIP_DEFLATED
+                z.writestr(info, p.read_bytes(), compresslevel=9)
 
 
 def main():
@@ -131,6 +135,8 @@ def main():
     zip_dir([STAGE], DIST / "english-hint-overlay.zip")
     zip_dir([ICE, STAGE], DIST / "rime-ice-english-full.zip")
     for f in ("english-hint-overlay.zip", "rime-ice-english-full.zip"):
+        # also served from GitHub Pages: release-assets.githubusercontent.com is often unreachable in China
+        shutil.copy2(DIST / f, ROOT / "app" / "rime" / f)
         print(f, round((DIST / f).stat().st_size / 1e6, 1), "MB")
     print("entries", n)
 

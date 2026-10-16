@@ -90,7 +90,9 @@ def push_branch(branch, entries, message, cache):
 def main():
     msg = sys.argv[1] if len(sys.argv) > 1 else "更新"
     cache = {}
-    push_branch("main", files_for(ROOT, SKIP_DIRS), msg, cache)
+    # the install zips are build output (tools/build_rime.py); only gh-pages serves them
+    src = [(r, p) for r, p in files_for(ROOT, SKIP_DIRS) if not (r.startswith("app/rime/") and r.endswith(".zip"))]
+    push_branch("main", src, msg, cache)
     app = ROOT / "app"
     nojekyll = Path(tempfile.gettempdir()) / ".nojekyll"
     nojekyll.write_text("")
