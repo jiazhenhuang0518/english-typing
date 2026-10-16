@@ -2,7 +2,7 @@
 # 供 lua/english_hint.lua 查英文。由 rime_ice.custom.yaml 挂到雾凇拼音的依赖里。
 schema:
   schema_id: english_hint
-  name: 英文注释数据
+  name: 英文注释数据（内部用·不用选）
   version: "1"
 
 engine:
