@@ -24,6 +24,11 @@
     <div class="brand"><a href="../" style="color:inherit;text-decoration:none"><span class="logo">Aa</span> 打字学英语</a></div>
   </header>
   <main><section class="page">
+    <div id="standaloneTip" class="card" hidden style="border-color:#d08a4a">
+      <b>先换到 Safari 打开这个页面</b>
+      <p class="small">从桌面图标打开的网页 App 里，iPhone 不让下载文件。点下面按钮复制网址，打开 Safari 粘贴到地址栏。</p>
+      <button type="button" class="ghost sm" id="copyUrl">复制这个页面的网址</button>
+    </div>
     <h1>输入法版：平时打字顺便学英语</h1>
     <p>把手机、电脑的输入法换成 <b>Rime + 雾凇拼音</b>，聊天、写文档时候选词后面直接显示英文：</p>
     <div class="demo"><b>1. 苹果<i>〔apple〕</i></b><b>2. 🍎</b><b>3. 评过</b><b>4. 平果</b></div>
@@ -46,7 +51,8 @@
         <li>打开仓输入法 App → 首页「RIME」→「重新部署」，等它转完（第一次几十秒）。</li>
         <li>聊天时长按键盘左下角 🌐 切到仓输入法，打 <code>pingguo</code> 看看。</li>
       </ol>
-      <a class="btnlike primary" href="https://github.com/jiazhenhuang0518/english-typing/releases/latest/download/english-hint-overlay.zip">下载 iPhone 补丁包（1.4 MB）</a>
+      <a class="btnlike primary" href="english-hint-overlay.zip" download>下载 iPhone 补丁包（1.4 MB）</a>
+      <p class="muted small">点了没反应？① 确认是在 <b>Safari</b> 里打开的这个页面（不是从桌面图标、微信里打开）② 试试 <a href="https://github.com/jiazhenhuang0518/english-typing/releases/latest/download/english-hint-overlay.zip">GitHub 备用地址</a>（国内网络可能连不上）③ 用 Mac 隔空投送，见电脑上「使用说明」文件夹。</p>
       <p class="muted small">补丁只有 4 个文件，不会覆盖仓输入法自带的雾凇拼音和你的其他设置。</p>
     </details>
 
@@ -59,7 +65,8 @@
         <li>同文 App →「部署」，等它跑完（第一次要 1～3 分钟）。</li>
         <li>切到同文键盘打 <code>pingguo</code> 试试；如果不是雾凇拼音，在同文 App 的「方案」里选「雾凇拼音」。</li>
       </ol>
-      <a class="btnlike primary" href="https://github.com/jiazhenhuang0518/english-typing/releases/latest/download/rime-ice-english-full.zip">下载完整包（17 MB）</a>
+      <a class="btnlike primary" href="rime-ice-english-full.zip" download>下载完整包（17 MB）</a>
+      <p class="muted small">下载不了可以试 <a href="https://github.com/jiazhenhuang0518/english-typing/releases/latest/download/rime-ice-english-full.zip">GitHub 备用地址</a>，或者从电脑用微信 / 数据线传过来。</p>
     </details>
 
     <details class="plat">
@@ -109,6 +116,14 @@
     <p class="credits muted small">雾凇拼音 <a href="https://github.com/iDvel/rime-ice" target="_blank" rel="noopener">iDvel/rime-ice</a>（GPL-3.0）· 输入法引擎 <a href="https://rime.im" target="_blank" rel="noopener">Rime</a> · 英文释义 <a href="https://cc-cedict.org" target="_blank" rel="noopener">CC-CEDICT</a>（CC BY-SA 4.0）</p>
   </section></main>
   <script>
+    if (navigator.standalone || matchMedia("(display-mode: standalone)").matches) {
+      document.getElementById("standaloneTip").hidden = false;
+    }
+    document.getElementById("copyUrl").addEventListener("click", (e) => {
+      const url = location.href.split("#")[0];
+      if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => (e.target.textContent = "已复制 ✓"), () => prompt("复制这个网址：", url));
+      else prompt("复制这个网址：", url);
+    });
     document.addEventListener("click", (e) => {
       const id = e.target.dataset && e.target.dataset.copy;
       if (!id) return;

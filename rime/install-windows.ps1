@@ -4,7 +4,7 @@
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$ZipUrl  = "https://github.com/jiazhenhuang0518/english-typing/releases/latest/download/rime-ice-english-full.zip"
+$ZipUrl  = "https://jiazhenhuang0518.github.io/english-typing/rime/rime-ice-english-full.zip"
 $WeaselUrl = "https://github.com/rime/weasel/releases/download/0.17.4/weasel-0.17.4.0-installer.exe"
 $RimeDir = Join-Path $env:APPDATA "Rime"
 # 「双击安装输入法.bat」会把同一文件夹里的安装包路径放进这两个环境变量，就不用联网下载
