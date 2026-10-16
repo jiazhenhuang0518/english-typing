@@ -1,5 +1,5 @@
 // 离线缓存：软件本身和词典存在手机里，没网也能打开
-const VERSION = "et-643d90721e";
+const VERSION = "et-b5e2ed4d4d";
 const SHELL = [
   "./",
   "index.html",
