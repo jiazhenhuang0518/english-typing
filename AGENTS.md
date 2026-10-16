@@ -18,7 +18,10 @@
 - `python3 tools/build_rime.py`：从 `app/data/zh2en.json`+`words.json` 生成 `english_hint.dict.yaml`（编码列=释义，空格存 `_`），打包 `dist/rime/english-hint-overlay.zip`（仓输入法）和 `rime-ice-english-full.zip`（雾凇 + 补丁，给鼠须管/小狼毫/同文）。需要 `tools/raw/rime-ice-main/`。
 - 两个 zip 发到 GitHub Release（`gh release upload <tag> dist/rime/*.zip --clobber`），安装页/脚本用 `releases/latest/download/...`。`dist/` 不进仓库。
 - 本机实测：`rime/test/run.sh pingguo apple`（需 `brew install librime`），输出候选和注释。
-- 安装页 `app/rime/index.html` + 脚本 `app/rime/install-mac.sh`、`install-windows.ps1`（Windows 脚本没在真机跑过）。
+- 安装页 `app/rime/index.html` + 脚本 `app/rime/install-mac.sh`、`install-windows.ps1`（Windows 脚本没在真机跑过；`RIME_ZIP`/`WEASEL_EXE` 环境变量可指定本地安装包）。
+
+## 本地使用说明文件夹
+- `python3 tools/build_guides.py`（先跑 build_rime.py）生成 `使用说明/`：5 个 HTML（先看我 + iPhone/安卓/Mac/Windows，带二维码）+ `安装包/`（官方安装包缓存在 `tools/raw/installers/`，硬链接进各平台文件夹；Mac `.command` 双击装，Windows `.bat` 双击装、ps1 存成 UTF-8 BOM）。改了文案改 build_guides.py 再生成，别手改 HTML。`安装包/` 不发布。
 
 ## 规矩
 - 改了 `app/` 任何文件，发布前必须跑 `python3 tools/stamp_version.py`（离线缓存版本号），否则手机一直用旧版。

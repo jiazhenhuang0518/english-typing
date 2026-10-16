@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mac 电脑 · 打字学英语使用说明</title><style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#0b0b0c;color:#e8e6e3;font:16px/1.7 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+main{max-width:760px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:26px;margin:0 0 6px}
+h2{font-size:20px;margin:34px 0 10px;padding-top:14px;border-top:1px solid #222226}
+h3{font-size:17px;margin:20px 0 6px;color:#cfc9be}
+a{color:#d8cfbf}
+code{background:#17171a;border:1px solid #2a2a2e;border-radius:5px;padding:1px 6px;font-size:14px}
+.lead{color:#a9a49b;margin:0 0 18px}
+.card{border:1px solid #2a2a2e;border-radius:12px;padding:12px 16px;margin:12px 0;background:#111114}
+.tip{border-left:3px solid #b8b2a7;padding:6px 12px;margin:12px 0;color:#cfc9be;background:#121215}
+.warn{border-left:3px solid #d08a4a}
+ol li,ul li{margin:6px 0}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+td,th{border:1px solid #2a2a2e;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#151518;color:#cfc9be}
+.qr{display:inline-block;background:#fff;padding:8px;border-radius:10px;margin:6px 16px 6px 0;text-align:center;color:#111;font-size:13px}
+.qr svg{width:150px;height:150px;display:block}
+.demo{font-size:17px;padding:8px 12px;border:1px solid #2a2a2e;border-radius:10px;background:#0f0f12}
+.demo i{font-style:normal;color:#8a8a92;font-size:13px}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.nav a{border:1px solid #2a2a2e;border-radius:999px;padding:4px 12px;text-decoration:none;font-size:14px}
+.nav a.on{background:#e8e6e3;color:#0b0b0c}
+.muted{color:#8a8a92;font-size:14px}
+details{margin:8px 0}summary{cursor:pointer;color:#cfc9be}
+</style></head>
+<body><main><div class="nav"><a href="0-先看我.html" class="">先看我</a><a href="1-iPhone.html" class="">iPhone</a><a href="2-安卓手机.html" class="">安卓手机</a><a href="3-Mac电脑.html" class="on">Mac 电脑</a><a href="4-Windows电脑.html" class="">Windows 电脑</a></div>
+<h1>Mac 电脑</h1>
+<p class="lead">这台 Mac 上配置已经放好了，只差装鼠须管（要你输开机密码，我没法替你输）。</p>
+
+<h2>一、网页 App</h2>
+<ol>
+<li>用 Chrome 打开 <a href="https://jiazhenhuang0518.github.io/english-typing/">https://jiazhenhuang0518.github.io/english-typing/</a></li>
+<li>地址栏右边有个「安装」图标（电脑 + 箭头）→ 安装。以后从启动台 / 程序坞打开。Safari 也行：菜单「文件 → 添加到程序坞」。</li>
+<li>建议在电脑上先把「我的 → 手机电脑同步」连好，再给手机配对。</li>
+</ol>
+
+<h3>手机电脑同步进度（可选，做一次就行）</h3>
+<ol>
+<li>先在<b>电脑</b>上做：网页 App →「我的」→「手机电脑同步」，按页面上的 3 步去 GitHub 生成一个令牌（只勾 <code>gist</code>），粘回来点「连接」。</li>
+<li>连好后在电脑上点「给手机/另一台电脑配对」，屏幕上出现二维码。</li>
+<li>手机打开<b>相机</b>扫这个二维码 → 点弹出的链接 → 自动连上。</li>
+</ol>
+<p class="muted">令牌相当于一把只能开 GitHub 小文件（Gist）的钥匙，只存在你自己设备的浏览器里。</p>
+
+
+<h2>二、输入法（鼠须管 + 雾凇拼音 + 英文注释）</h2>
+<h3>第 1 步：双击安装</h3>
+<ol>
+<li>打开 <code>使用说明/安装包/Mac/</code>，双击「<b>双击安装输入法.command</b>」。会弹出一个「终端」黑窗口。</li>
+<li>提示输入密码时输入<b>开机密码</b>，回车。输的时候屏幕上什么都不显示，是正常的。</li>
+<li>等它显示「装好了」，按任意键关掉窗口。</li>
+</ol>
+<div class="tip">如果双击提示「无法打开」：右键这个文件 →「打开」→ 再点「打开」。</div>
+<p class="muted">它做了三件事：装鼠须管（官方签名安装包）→ 把原来的 <code>~/Library/Rime</code> 改名备份 → 放入新配置并部署。</p>
+
+<h3>第 2 步：在系统里添加鼠须管</h3>
+<ol>
+<li>「系统设置」→「键盘」→「文字输入」那一栏点「编辑…」。</li>
+<li>左下角「+」→ 左边选「简体中文」→ 右边选「<b>鼠须管</b>」→「添加」。</li>
+<li>列表里找不到鼠须管：屏幕左上角  →「退出登录」，重新登录后再找。</li>
+</ol>
+
+<h3>第 3 步：用起来</h3>
+<ul>
+<li>按 <code>Ctrl + 空格</code>（或键盘上的 🌐 / 地球键）切到鼠须管。</li>
+<li>打 <code>pingguo</code>，看到 <div class="demo">苹果<i>〔apple〕</i>　🍎　评过　平果</div> 就成功了。</li>
+<li>中英文切换：按一下 <code>Shift</code>。</li>
+<li>开关英文注释：打字时按 <code>Ctrl + `</code>（数字 1 左边的键）→ 选「英文 / 无英」。</li>
+</ul>
+
+<h2>出问题怎么办</h2>
+<ul>
+<li><b>没有英文 / 候选不对</b>：屏幕右上角菜单栏的输入法图标 → 鼠须管 →「重新部署」，等十几秒。</li>
+<li><b>想恢复原来的配置</b>：<code>~/Library/</code> 里有 <code>Rime.bak-日期</code> 文件夹，把现在的 <code>Rime</code> 删掉，备份改回 <code>Rime</code>，再「重新部署」。</li>
+<li><b>不想要了</b>：在「文字输入」里把鼠须管删掉（选中按「−」）就不会再出现。</li>
+<li>以后要更新词库：重新运行一次「双击安装输入法.command」就行（会自动备份旧的）。</li>
+</ul>
+
+<p class="muted" style="margin-top:40px">雾凇拼音 iDvel/rime-ice（GPL-3.0）· 输入法引擎 Rime · 英文释义 CC-CEDICT（CC BY-SA 4.0）· 词典 ECDICT（MIT）</p>
+</main></body></html>

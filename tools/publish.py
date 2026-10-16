@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 REPO = "jiazhenhuang0518/english-typing"
-SKIP_DIRS = {"tools/raw", "tools/shots", "dist", "node_modules", ".git", "__pycache__", ".factory"}
+SKIP_DIRS = {"tools/raw", "tools/shots", "dist", "使用说明/安装包", "node_modules", ".git", "__pycache__", ".factory"}
 SKIP_NAMES = {".DS_Store"}
 CO_AUTHOR = "Co-authored-by: factory-droid[bot] <138933559+factory-droid[bot]@users.noreply.github.com>"
 
