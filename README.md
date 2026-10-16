@@ -18,6 +18,11 @@
 1. 在一台设备上打开「我的 → 手机电脑同步」，按提示去 GitHub 生成一个只勾 `gist` 权限的令牌，粘贴后点「连接」。
 2. 点「给手机/另一台电脑配对」，用手机相机扫二维码，就自动连好了。
 
+## 输入法版
+
+不想每次打开网页？把系统输入法换成 Rime（雾凇拼音），平时打字候选词就带英文：`苹果〔apple〕`。
+安装步骤（iPhone / 安卓 / Mac / Windows）：<https://jiazhenhuang0518.github.io/english-typing/rime/>
+
 ## 开发
 
 ```bash
@@ -36,4 +41,5 @@ python3 tools/stamp_version.py  # 发布前必跑：更新离线缓存版本号�
 
 - [ECDICT](https://github.com/skywind3000/ECDICT)（MIT）：英文单词、音标、中文释义、考试分级
 - [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cc-cedict)（CC BY-SA 4.0）：中文→英文词典。`app/data/zh2en.json` 由它整理而来，同样按 CC BY-SA 4.0 发布
+- [雾凇拼音 rime-ice](https://github.com/iDvel/rime-ice)（GPL-3.0）：输入法版的词库和配置，完整包里原样附带它的 LICENSE
 - [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator)（MIT）：配对二维码

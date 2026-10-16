@@ -106,6 +106,12 @@ export function renderMe(app, root) {
     </div>
 
     <div class="card">
+      <h3>⌨️ ${term("输入法版")}：平时聊天也学英语</h3>
+      <p class="small">把手机电脑的输入法换成 Rime，打 <code>pingguo</code> 候选直接显示「苹果〔apple〕」。iPhone、安卓、Mac、Windows 都有。</p>
+      <a class="btnlike ghost" href="rime/">看安装步骤</a>
+    </div>
+
+    <div class="card">
       <h3>📖 术语表</h3>
       <div class="chips">${Object.keys(TERMS).map((k) => term(k)).join(" ")}</div>
     </div>

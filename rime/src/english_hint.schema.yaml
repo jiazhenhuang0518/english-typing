@@ -1,0 +1,13 @@
+# 不是给人用的输入方案，只是让部署程序把 english_hint.dict.yaml 编译出来，
+# 供 lua/english_hint.lua 查英文。由 rime_ice.custom.yaml 挂到雾凇拼音的依赖里。
+schema:
+  schema_id: english_hint
+  name: 英文注释数据
+  version: "1"
+
+engine:
+  translators:
+    - table_translator
+
+translator:
+  dictionary: english_hint

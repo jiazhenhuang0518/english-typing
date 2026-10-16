@@ -1,0 +1,11 @@
+# 打字学英语 · 雾凇拼音补丁：候选词后面显示英文
+# 开关：方案菜单（Mac/Windows 按 Ctrl+` 或 F4；手机在键盘设置里）里的「英文注释」
+patch:
+  "schema/dependencies/+":
+    - english_hint
+  "switches/+":
+    - name: english_hint
+      states: [ 无英, 英文 ]
+      reset: 1
+  "engine/filters/+":
+    - lua_filter@*english_hint
